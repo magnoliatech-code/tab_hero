@@ -2,7 +2,7 @@
 
 ## Phase 1: Project Scaffolding
 - [x] Task: Initialize Vite project with React, TypeScript, and Vitest 40549d7
-- [ ] Task: Configure Tailwind CSS, Shadcn/UI, and Lucide icons
+- [~] Task: Configure Tailwind CSS, Shadcn/UI, and Lucide icons
 - [ ] Task: Setup CRXJS and define initial `manifest.json`
 - [ ] Task: Conductor - User Manual Verification 'Project Scaffolding' (Protocol in workflow.md)
 
