@@ -1,7 +1,7 @@
 # Track Plan: Project Initialization and Core Tab Management MVP
 
 ## Phase 1: Project Scaffolding
-- [ ] Task: Initialize Vite project with React, TypeScript, and Vitest
+- [~] Task: Initialize Vite project with React, TypeScript, and Vitest
 - [ ] Task: Configure Tailwind CSS, Shadcn/UI, and Lucide icons
 - [ ] Task: Setup CRXJS and define initial `manifest.json`
 - [ ] Task: Conductor - User Manual Verification 'Project Scaffolding' (Protocol in workflow.md)
