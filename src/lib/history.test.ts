@@ -53,4 +53,12 @@ describe('HistoryStack', () => {
     expect(stack.peekPrevious()).toBe(1)
     expect(stack.getStack()).toEqual([1, 2])
   })
+
+  it('removes a tab ID from the stack', () => {
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    stack.remove(2)
+    expect(stack.getStack()).toEqual([1, 3])
+  })
 })

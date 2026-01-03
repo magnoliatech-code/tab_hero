@@ -48,4 +48,8 @@ export class HistoryStack {
   getStack(): number[] {
     return [...this.stack]
   }
+
+  remove(tabId: number) {
+    this.stack = this.stack.filter((id) => id !== tabId)
+  }
 }

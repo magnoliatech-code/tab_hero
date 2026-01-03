@@ -7,8 +7,8 @@ describe('StorageService', () => {
     global.chrome = {
       storage: {
         local: {
-          set: vi.fn().mockImplementation((data, cb) => cb?.()),
-          get: vi.fn().mockImplementation((key, cb) => cb?.({})),
+          set: vi.fn().mockResolvedValue(undefined),
+          get: vi.fn().mockResolvedValue({}),
         },
       },
     } as any
@@ -22,9 +22,7 @@ describe('StorageService', () => {
 
   it('loads the history stack from chrome.storage.local', async () => {
     const stack = [1, 2, 3]
-    ;(chrome.storage.local.get as any).mockImplementation((key: string, cb: any) => {
-        cb({ tabHistory: stack })
-    })
+    ;(chrome.storage.local.get as any).mockResolvedValue({ tabHistory: stack })
 
     const loaded = await loadHistory()
     expect(loaded).toEqual(stack)
