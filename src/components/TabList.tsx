@@ -10,7 +10,7 @@ interface TabListProps {
 
 export function TabList({ tabs, onSelect, onClose }: TabListProps) {
   return (
-    <ScrollArea className="h-[400px] w-full pr-4">
+    <ScrollArea className="h-[600px] w-full pr-4">
       <div className="space-y-1">
         {tabs.map((tab) => (
           <div

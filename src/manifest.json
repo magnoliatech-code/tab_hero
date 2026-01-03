@@ -3,9 +3,7 @@
   "name": "Tab Hero",
   "version": "1.0.0",
   "description": "A modern, sleek chrome extension to help you manage tabs and apps.",
-  "action": {
-    "default_popup": "index.html"
-  },
+  "action": {},
   "background": {
     "service_worker": "src/background.ts",
     "type": "module"

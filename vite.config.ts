@@ -16,6 +16,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        dashboard: 'index.html',
+      },
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',

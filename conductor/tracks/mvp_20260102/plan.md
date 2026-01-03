@@ -18,4 +18,4 @@
 - [x] Task: Implement Feature: Search and duplicate detection logic ac458ab
 - [x] Task: Write Tests: Tab list component rendering and interaction cc12d68
 - [x] Task: Implement Feature: Popup UI with Tab list, Search bar, and Duplicate removal button e0f4472
-- [ ] Task: Conductor - User Manual Verification 'Tab Management UI' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Tab Management UI' (Protocol in workflow.md)

@@ -59,3 +59,22 @@ chrome.runtime.onMessage.addListener((message: any, _sender: chrome.runtime.Mess
     return true
   }
 })
+
+// Open dashboard on icon click
+chrome.action.onClicked.addListener(async () => {
+  await initPromise
+  const dashboardUrl = chrome.runtime.getURL('index.html')
+  // Match strictly
+  const tabs = await chrome.tabs.query({ url: dashboardUrl })
+
+  if (tabs.length > 0 && tabs[0].id) {
+    // Already open, switch to it
+    await chrome.tabs.update(tabs[0].id, { active: true })
+    if (tabs[0].windowId) {
+      await chrome.windows.update(tabs[0].windowId, { focused: true })
+    }
+  } else {
+    // Create it
+    await chrome.tabs.create({ url: dashboardUrl, index: 0, pinned: true, active: true })
+  }
+})
