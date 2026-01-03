@@ -8,7 +8,7 @@
 
 ## Phase 2: Tab History Service (Background)
 - [x] Task: Write Tests: History stack management logic (push, pop, limit size) fbeefbf
-- [ ] Task: Implement Feature: History stack service module
+- [x] Task: Implement Feature: History stack service module 0fba217
 - [ ] Task: Write Tests: Chrome storage integration for persistence
 - [ ] Task: Implement Feature: Background script to sync stack with `chrome.tabs` events
 - [ ] Task: Conductor - User Manual Verification 'Tab History Service' (Protocol in workflow.md)
