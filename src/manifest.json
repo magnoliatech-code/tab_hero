@@ -4,6 +4,29 @@
   "version": "1.0.0",
   "description": "A modern, sleek chrome extension to help you manage tabs and apps.",
   "action": {},
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+H",
+        "mac": "Alt+Shift+H"
+      },
+      "description": "Open Tab Hero Dashboard"
+    },
+    "jump_back": {
+      "suggested_key": {
+        "default": "Alt+Shift+Left",
+        "mac": "Alt+Shift+Left"
+      },
+      "description": "Jump Back in Tab History"
+    },
+    "jump_forward": {
+      "suggested_key": {
+        "default": "Alt+Shift+Right",
+        "mac": "Alt+Shift+Right"
+      },
+      "description": "Jump Forward in Tab History"
+    }
+  },
   "background": {
     "service_worker": "src/background.ts",
     "type": "module"
