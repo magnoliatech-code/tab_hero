@@ -13,9 +13,9 @@
 - [x] Task: Implement Feature: Background script to sync stack with `chrome.tabs` events 944652a
 - [x] Task: Conductor - User Manual Verification 'Tab History Service' (Protocol in workflow.md) d133c5e
 
-## Phase 3: Tab Management UI (Popup)
+## Phase 3: Tab Management UI (Popup) [checkpoint: 975604e]
 - [x] Task: Write Tests: Tab search and duplicate detection utility functions 7bff946
 - [x] Task: Implement Feature: Search and duplicate detection logic ac458ab
 - [x] Task: Write Tests: Tab list component rendering and interaction cc12d68
 - [x] Task: Implement Feature: Popup UI with Tab list, Search bar, and Duplicate removal button e0f4472
-- [~] Task: Conductor - User Manual Verification 'Tab Management UI' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Tab Management UI' (Protocol in workflow.md) 975604e
