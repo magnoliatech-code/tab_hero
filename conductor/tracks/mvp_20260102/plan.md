@@ -7,7 +7,7 @@
 - [x] Task: Conductor - User Manual Verification 'Project Scaffolding' (Protocol in workflow.md) 72fa0ef
 
 ## Phase 2: Tab History Service (Background)
-- [ ] Task: Write Tests: History stack management logic (push, pop, limit size)
+- [x] Task: Write Tests: History stack management logic (push, pop, limit size) fbeefbf
 - [ ] Task: Implement Feature: History stack service module
 - [ ] Task: Write Tests: Chrome storage integration for persistence
 - [ ] Task: Implement Feature: Background script to sync stack with `chrome.tabs` events
