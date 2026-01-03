@@ -11,7 +11,7 @@
 - [x] Task: Implement Feature: History stack service module 0fba217
 - [x] Task: Write Tests: Chrome storage integration for persistence 4a4300c
 - [x] Task: Implement Feature: Background script to sync stack with `chrome.tabs` events 944652a
-- [ ] Task: Conductor - User Manual Verification 'Tab History Service' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Tab History Service' (Protocol in workflow.md)
 
 ## Phase 3: Tab Management UI (Popup)
 - [ ] Task: Write Tests: Tab search and duplicate detection utility functions

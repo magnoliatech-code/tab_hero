@@ -4,10 +4,13 @@ import { loadHistory, saveHistory } from './lib/storage'
 let historyStack: HistoryStack
 
 async function init() {
+  console.log("Tab Hero: Initializing background service...")
   const saved = await loadHistory()
+  console.log("Tab Hero: Loaded history:", saved)
   historyStack = new HistoryStack(50)
   // Re-push saved to stack
   saved.forEach((id) => historyStack.push(id))
+  console.log("Tab Hero: History initialized.")
 }
 
 // Ensure init is called
@@ -15,6 +18,7 @@ const initPromise = init()
 
 chrome.tabs.onActivated.addListener(async (activeInfo: any) => {
   await initPromise
+  console.log("Tab Hero: Tab activated:", activeInfo.tabId)
   historyStack.push(activeInfo.tabId)
   await saveHistory(historyStack.getStack())
 })
