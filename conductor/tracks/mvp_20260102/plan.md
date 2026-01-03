@@ -6,12 +6,12 @@
 - [x] Task: Setup CRXJS and define initial `manifest.json` 5b27e2f
 - [x] Task: Conductor - User Manual Verification 'Project Scaffolding' (Protocol in workflow.md) 72fa0ef
 
-## Phase 2: Tab History Service (Background)
+## Phase 2: Tab History Service (Background) [checkpoint: d133c5e]
 - [x] Task: Write Tests: History stack management logic (push, pop, limit size) fbeefbf
 - [x] Task: Implement Feature: History stack service module 0fba217
 - [x] Task: Write Tests: Chrome storage integration for persistence 4a4300c
 - [x] Task: Implement Feature: Background script to sync stack with `chrome.tabs` events 944652a
-- [~] Task: Conductor - User Manual Verification 'Tab History Service' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Tab History Service' (Protocol in workflow.md) d133c5e
 
 ## Phase 3: Tab Management UI (Popup)
 - [ ] Task: Write Tests: Tab search and duplicate detection utility functions
