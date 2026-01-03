@@ -78,3 +78,12 @@ chrome.action.onClicked.addListener(async () => {
     await chrome.tabs.create({ url: dashboardUrl, index: 0, pinned: true, active: true })
   }
 })
+
+chrome.commands.onCommand.addListener(async (command) => {
+  console.log("Tab Hero: Command received:", command)
+  if (command === 'jump_back') {
+    // TODO: Reuse navigate back logic
+  } else if (command === 'jump_forward') {
+    // TODO: Reuse navigate forward logic
+  }
+})
