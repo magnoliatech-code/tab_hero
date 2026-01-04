@@ -14,22 +14,32 @@ describe('StorageService', () => {
     } as any
   })
 
-  it('saves the history stack to chrome.storage.local', async () => {
+  it('saves the history stack and pointer to chrome.storage.local', async () => {
     const stack = [1, 2, 3]
-    await saveHistory(stack)
-    expect(chrome.storage.local.set).toHaveBeenCalledWith({ tabHistory: stack })
+    const pointer = 2
+    await saveHistory(stack, pointer)
+    expect(chrome.storage.local.set).toHaveBeenCalledWith({ 
+      tabHistory: stack,
+      historyPointer: pointer 
+    })
   })
 
-  it('loads the history stack from chrome.storage.local', async () => {
+  it('loads the history stack and pointer from chrome.storage.local', async () => {
     const stack = [1, 2, 3]
-    ;(chrome.storage.local.get as any).mockResolvedValue({ tabHistory: stack })
+    const pointer = 1
+    ;(chrome.storage.local.get as any).mockResolvedValue({ 
+      tabHistory: stack,
+      historyPointer: pointer 
+    })
 
     const loaded = await loadHistory()
-    expect(loaded).toEqual(stack)
+    expect(loaded.stack).toEqual(stack)
+    expect(loaded.pointer).toBe(pointer)
   })
 
-  it('returns an empty array if no history is found', async () => {
+  it('returns defaults if no history is found', async () => {
     const loaded = await loadHistory()
-    expect(loaded).toEqual([])
+    expect(loaded.stack).toEqual([])
+    expect(loaded.pointer).toBe(-1)
   })
 })
