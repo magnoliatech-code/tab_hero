@@ -1,0 +1,8 @@
+{
+  "track_id": "advanced_tab_mgmt_20260102",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-01-02T22:40:00Z",
+  "updated_at": "2026-01-02T22:40:00Z",
+  "description": "Advanced Tab Management and Shortcuts: implements keyboard shortcuts, real-time sync, and window-based organization."
+}

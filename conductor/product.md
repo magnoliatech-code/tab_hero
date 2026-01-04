@@ -11,7 +11,7 @@ Tab Hero is designed for power users who manage a high volume of open tabs and d
 
 ## Core Features
 - **Tab History Stack:** Maintains a stack of visited tabs, allowing users to jump back and forward using keyboard shortcuts.
-- **Visual Tab Management:** A visual grid view of all open tabs and windows, supporting drag-and-drop reordering and movement between windows.
+- **Dashboard UI:** A pinned dashboard tab for centralized management of all open tabs.
 - **Fast Search:** Quick filtering and searching to find specific tabs by title or URL.
 - **Duplicate Removal:** Automatically or manually identify and close duplicate tabs to save resources and reduce clutter.
 - **App-Centric Navigation:** Focuses on active web applications in tabs as the primary unit of management.
