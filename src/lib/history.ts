@@ -68,6 +68,11 @@ export class HistoryStack {
     return this.pointer
   }
 
+  restore(stack: number[], pointer: number) {
+    this.stack = [...stack]
+    this.pointer = pointer
+  }
+
   remove(tabId: number) {
     const index = this.stack.indexOf(tabId)
     if (index !== -1) {
