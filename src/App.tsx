@@ -1,24 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { TabList } from '@/components/TabList'
 import { filterTabs, findDuplicates } from '@/lib/tabs'
 import { RotateCcw, Trash2, Search } from 'lucide-react'
+import { useTabs } from '@/hooks/useTabs'
 
 function App() {
-  const [tabs, setTabs] = useState<chrome.tabs.Tab[]>([])
+  const { tabs, refresh } = useTabs()
   const [searchQuery, setSearchQuery] = useState('')
-
-  const fetchTabs = async () => {
-    if (typeof chrome !== 'undefined' && chrome.tabs) {
-      const allTabs = await chrome.tabs.query({})
-      setTabs(allTabs)
-    }
-  }
-
-  useEffect(() => {
-    fetchTabs()
-  }, [])
 
   const handleSelect = (tabId: number) => {
     chrome.tabs.update(tabId, { active: true }, (tab) => {
@@ -30,14 +20,14 @@ function App() {
 
   const handleClose = async (tabId: number) => {
     await chrome.tabs.remove(tabId)
-    fetchTabs()
+    refresh()
   }
 
   const handleClearDuplicates = async () => {
     const duplicateIds = findDuplicates(tabs)
     if (duplicateIds.length > 0) {
       await chrome.tabs.remove(duplicateIds)
-      fetchTabs()
+      refresh()
     }
   }
 

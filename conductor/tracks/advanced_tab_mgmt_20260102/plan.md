@@ -14,9 +14,9 @@
 - [x] Task: Conductor - User Manual Verification 'Enhanced History Navigation' (Protocol in workflow.md) e325dce
 
 ## Phase 3: Real-time Dashboard Synchronization
-- [ ] Task: Write Tests: Custom hook for real-time chrome tab events
-- [ ] Task: Implement Feature: `useTabs` hook in dashboard to listen for tab changes
-- [ ] Task: Conductor - User Manual Verification 'Real-time Dashboard Synchronization' (Protocol in workflow.md)
+- [x] Task: Write Tests: Custom hook for real-time chrome tab events 643eec3
+- [x] Task: Implement Feature: `useTabs` hook in dashboard to listen for tab changes a9a2a74
+- [~] Task: Conductor - User Manual Verification 'Real-time Dashboard Synchronization' (Protocol in workflow.md)
 
 ## Phase 4: Window-Based Organization and Dashboard UI
 - [ ] Task: Write Tests: Tab grouping by windowId and sorting
