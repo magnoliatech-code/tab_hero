@@ -20,7 +20,7 @@
 
 ## Phase 4: Window-Based Organization and Dashboard UI
 - [x] Task: Write Tests: Tab grouping by windowId and sorting 1b89fe6
-- [~] Task: Implement Feature: Grouping logic and updated Dashboard layout
-- [ ] Task: Implement Feature: Add Shortcuts instruction section to dashboard
-- [ ] Task: Implement Feature: Remove the "Back" button from dashboard
-- [ ] Task: Conductor - User Manual Verification 'Window-Based Organization and Dashboard UI' (Protocol in workflow.md)
+- [x] Task: Implement Feature: Grouping logic and updated Dashboard layout eb64294
+- [x] Task: Implement Feature: Add Shortcuts instruction section to dashboard eb64294
+- [x] Task: Implement Feature: Remove the "Back" button from dashboard eb64294
+- [~] Task: Conductor - User Manual Verification 'Window-Based Organization and Dashboard UI' (Protocol in workflow.md)
