@@ -18,9 +18,9 @@
 - [x] Task: Implement Feature: `useTabs` hook in dashboard to listen for tab changes a9a2a74
 - [x] Task: Conductor - User Manual Verification 'Real-time Dashboard Synchronization' (Protocol in workflow.md) de01557
 
-## Phase 4: Window-Based Organization and Dashboard UI
+## Phase 4: Window-Based Organization and Dashboard UI [checkpoint: 48bab00]
 - [x] Task: Write Tests: Tab grouping by windowId and sorting 1b89fe6
 - [x] Task: Implement Feature: Grouping logic and updated Dashboard layout eb64294
 - [x] Task: Implement Feature: Add Shortcuts instruction section to dashboard eb64294
 - [x] Task: Implement Feature: Remove the "Back" button from dashboard eb64294
-- [~] Task: Conductor - User Manual Verification 'Window-Based Organization and Dashboard UI' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Window-Based Organization and Dashboard UI' (Protocol in workflow.md) 48bab00
