@@ -1,10 +1,10 @@
 # Track Plan: Advanced Tab Management and Shortcuts
 
-## Phase 1: Commands and Global Shortcuts
+## Phase 1: Commands and Global Shortcuts [checkpoint: 5ca6576]
 - [x] Task: Update `manifest.json` with `commands` for activation and history navigation a42e466
 - [x] Task: Write Tests: Commands listener in background script f949ce5
 - [x] Task: Implement Feature: Handle `onCommand` events in background script d2a3f59
-- [ ] Task: Conductor - User Manual Verification 'Commands and Global Shortcuts' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Commands and Global Shortcuts' (Protocol in workflow.md) 5ca6576
 
 ## Phase 2: Enhanced History Navigation (Back/Forward)
 - [ ] Task: Write Tests: History service traversal (undo/redo style)
