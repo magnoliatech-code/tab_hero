@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { filterTabs, findDuplicates } from './tabs'
+import { filterTabs, findDuplicates, groupTabsByWindow } from './tabs'
 
 describe('Tab Utilities', () => {
   const mockTabs = [
@@ -39,6 +39,21 @@ describe('Tab Utilities', () => {
     it('returns an empty array when no duplicates exist', () => {
       const uniqueTabs = mockTabs.slice(0, 3)
       expect(findDuplicates(uniqueTabs)).toEqual([])
+    })
+  })
+
+  describe('groupTabsByWindow', () => {
+    it('groups tabs by windowId', () => {
+      const tabs = [
+        { id: 1, windowId: 10, title: 'W10-T1' },
+        { id: 2, windowId: 20, title: 'W20-T1' },
+        { id: 3, windowId: 10, title: 'W10-T2' },
+      ] as any[]
+      
+      const groups = groupTabsByWindow(tabs)
+      expect(groups.length).toBe(2)
+      expect(groups.find((g: any) => g.windowId === 10)?.tabs.length).toBe(2)
+      expect(groups.find((g: any) => g.windowId === 20)?.tabs.length).toBe(1)
     })
   })
 })
