@@ -19,8 +19,8 @@
 - [x] Task: Conductor - User Manual Verification 'Real-time Dashboard Synchronization' (Protocol in workflow.md) de01557
 
 ## Phase 4: Window-Based Organization and Dashboard UI
-- [ ] Task: Write Tests: Tab grouping by windowId and sorting
-- [ ] Task: Implement Feature: Grouping logic and updated Dashboard layout
+- [x] Task: Write Tests: Tab grouping by windowId and sorting 1b89fe6
+- [~] Task: Implement Feature: Grouping logic and updated Dashboard layout
 - [ ] Task: Implement Feature: Add Shortcuts instruction section to dashboard
 - [ ] Task: Implement Feature: Remove the "Back" button from dashboard
 - [ ] Task: Conductor - User Manual Verification 'Window-Based Organization and Dashboard UI' (Protocol in workflow.md)
