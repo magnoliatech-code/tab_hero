@@ -16,6 +16,15 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    port: 5173,
+    strictPort: true,
+    origin: 'http://localhost:5173',
+    hmr: {
+      clientPort: 5173,
+    },
+    cors: true, // Enable CORS for any origin
+  },
   build: {
     rollupOptions: {
       input: {

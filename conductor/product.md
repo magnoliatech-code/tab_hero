@@ -10,10 +10,12 @@ I want the ui to be modern and sleek.
 Tab Hero is designed for power users who manage a high volume of open tabs and developers/researchers who need to efficiently navigate back and forth between related content.
 
 ## Core Features
-- **Tab History Stack:** Maintains a stack of visited tabs, allowing users to jump back and forward using keyboard shortcuts.
+- **Keyboard-Driven Navigation:** Maintains a robust history stack with global keyboard shortcuts for instant back/forward navigation.
 - **Dashboard UI:** A pinned dashboard tab for centralized management of all open tabs.
+- **Window Organization:** Tabs are intelligently grouped by browser window, with the current window prioritized at the top.
 - **Fast Search:** Quick filtering and searching to find specific tabs by title or URL.
 - **Duplicate Removal:** Automatically or manually identify and close duplicate tabs to save resources and reduce clutter.
+- **Advanced Tab Management:** Direct tab closing, alphabetical sorting (by Title/URL), and flexible window merging options directly from the dashboard.
 - **App-Centric Navigation:** Focuses on active web applications in tabs as the primary unit of management.
 
 ## User Experience Goal

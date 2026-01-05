@@ -19,23 +19,24 @@ describe('TabList', () => {
   ] as any[]
 
   it('renders a list of tabs grouped by window', () => {
-    render(<TabList groups={mockGroups} onSelect={vi.fn()} onClose={vi.fn()} />)
+    render(<TabList groups={mockGroups} onSelect={vi.fn()} onClose={vi.fn()} onSortByTitle={vi.fn()} onSortByUrl={vi.fn()} />)
     expect(screen.getByText('Tab 1')).toBeInTheDocument()
     expect(screen.getByText('Tab 2')).toBeInTheDocument()
     expect(screen.getByText(/Window 1/i)).toBeInTheDocument()
     expect(screen.getByText(/Window 2/i)).toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /sort tabs/i })).toHaveLength(2)
   })
 
   it('calls onSelect when a tab is clicked', () => {
     const onSelect = vi.fn()
-    render(<TabList groups={mockGroups} onSelect={onSelect} onClose={vi.fn()} />)
+    render(<TabList groups={mockGroups} onSelect={onSelect} onClose={vi.fn()} onSortByTitle={vi.fn()} onSortByUrl={vi.fn()} />)
     fireEvent.click(screen.getByText('Tab 1'))
     expect(onSelect).toHaveBeenCalledWith(1)
   })
 
   it('calls onClose when the close button is clicked', () => {
     const onClose = vi.fn()
-    render(<TabList groups={mockGroups} onSelect={vi.fn()} onClose={onClose} />)
+    render(<TabList groups={mockGroups} onSelect={vi.fn()} onClose={onClose} onSortByTitle={vi.fn()} onSortByUrl={vi.fn()} />)
     const closeButtons = screen.getAllByRole('button', { name: /close/i })
     fireEvent.click(closeButtons[0])
     expect(onClose).toHaveBeenCalledWith(1)

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { TabList } from '@/components/TabList'
-import { filterTabs, findDuplicates, groupTabsByWindow } from '@/lib/tabs'
-import { Trash2, Search, Keyboard, ChevronDown, ChevronUp } from 'lucide-react'
+import { filterTabs, findDuplicates, groupTabsByWindow, closeTab, sortTabsByTitle, sortTabsByUrl, mergeAllWindows, mergeSelectedWindows } from '@/lib/tabs'
+import { Trash2, Search, Keyboard, ChevronDown, ChevronUp, Merge, ListChecks } from 'lucide-react'
 import { useTabs } from '@/hooks/useTabs'
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
   const [currentWindowId, setCurrentWindowId] = useState<number>()
   const [showInstructions, setShowInstructions] = useState(false)
+  const [selectionMode, setSelectionMode] = useState(false)
+  const [selectedWindowIds, setSelectedWindowIds] = useState<Set<number>>(new Set())
 
   useEffect(() => {
     if (typeof chrome !== 'undefined' && chrome.windows) {
@@ -27,8 +29,43 @@ function App() {
   }
 
   const handleClose = async (tabId: number) => {
-    await chrome.tabs.remove(tabId)
+    await closeTab(tabId)
     refresh()
+  }
+
+  const handleSortByTitle = async (windowId: number) => {
+    const windowTabs = tabs.filter((t) => t.windowId === windowId)
+    await sortTabsByTitle(windowTabs)
+    refresh()
+  }
+
+  const handleSortByUrl = async (windowId: number) => {
+    const windowTabs = tabs.filter((t) => t.windowId === windowId)
+    await sortTabsByUrl(windowTabs)
+    refresh()
+  }
+
+  const handleMergeAll = async () => {
+    await mergeAllWindows()
+    refresh()
+  }
+
+  const handleToggleWindowSelection = (windowId: number) => {
+    const next = new Set(selectedWindowIds)
+    if (next.has(windowId)) {
+      next.delete(windowId)
+    } else {
+      next.add(windowId)
+    }
+    setSelectedWindowIds(next)
+  }
+
+  const handleMergeSelected = async () => {
+    if (selectedWindowIds.size === 0 || !currentWindowId) return
+    await mergeSelectedWindows(currentWindowId, Array.from(selectedWindowIds))
+    refresh()
+    setSelectionMode(false)
+    setSelectedWindowIds(new Set())
   }
 
   const handleClearDuplicates = async () => {
@@ -121,21 +158,78 @@ function App() {
           <span className="text-sm text-muted-foreground font-medium">
             {filtered.length} {filtered.length === 1 ? 'tab' : 'tabs'} open
           </span>
-          {duplicateCount > 0 && (
-            <Button
-              variant="destructive"
-              size="sm"
-              onClick={handleClearDuplicates}
-              className="h-8"
-            >
-              <Trash2 className="mr-2 h-4 w-4" />
-              Remove {duplicateCount} {duplicateCount === 1 ? 'duplicate' : 'duplicates'}
-            </Button>
-          )}
+          <div className="flex items-center space-x-2">
+            {!selectionMode ? (
+              <>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setSelectionMode(true)}
+                  className="h-8"
+                >
+                  <ListChecks className="mr-2 h-4 w-4" />
+                  Select
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleMergeAll}
+                  className="h-8"
+                >
+                  <Merge className="mr-2 h-4 w-4" />
+                  Merge All
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => {
+                    setSelectionMode(false)
+                    setSelectedWindowIds(new Set())
+                  }}
+                  className="h-8"
+                >
+                  Cancel
+                </Button>
+                <Button
+                  variant="default"
+                  size="sm"
+                  onClick={handleMergeSelected}
+                  className="h-8"
+                  disabled={selectedWindowIds.size === 0}
+                >
+                  <Merge className="mr-2 h-4 w-4" />
+                  Merge Selected ({selectedWindowIds.size})
+                </Button>
+              </>
+            )}
+            {duplicateCount > 0 && (
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={handleClearDuplicates}
+                className="h-8"
+              >
+                <Trash2 className="mr-2 h-4 w-4" />
+                Remove {duplicateCount} {duplicateCount === 1 ? 'duplicate' : 'duplicates'}
+              </Button>
+            )}
+          </div>
         </div>
 
         <div className="border rounded-md bg-background/50">
-          <TabList groups={sortedGroups} onSelect={handleSelect} onClose={handleClose} />
+          <TabList
+            groups={sortedGroups}
+            onSelect={handleSelect}
+            onClose={handleClose}
+            onSortByTitle={handleSortByTitle}
+            onSortByUrl={handleSortByUrl}
+            selectionMode={selectionMode}
+            selectedWindowIds={selectedWindowIds}
+            onToggleWindowSelection={handleToggleWindowSelection}
+          />
         </div>
       </div>
     </div>

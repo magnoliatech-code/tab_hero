@@ -62,7 +62,8 @@ describe('App', () => {
 
   it('renders keyboard shortcut instructions', () => {
     render(<App />)
-    expect(screen.getByText(/Configuration Instructions/i)).toBeInTheDocument()
+    const toggleButton = screen.getByText(/Configuration Instructions/i)
+    fireEvent.click(toggleButton)
     expect(screen.getByText(/chrome:\/\/extensions\/shortcuts/i)).toBeInTheDocument()
   })
 })
