@@ -13,8 +13,8 @@
 - [x] Task: Conductor - User Manual Verification 'Icon Generation and Asset Creation' (Protocol in workflow.md)
 
 ## Phase 2: Configuration and Integration
-- [ ] Task: Update Manifest File
-    - [ ] Sub-task: Edit `src/manifest.json` to include the `icons` object
-    - [ ] Sub-task: Link the 16, 32, 48, and 128 sizes to the new files in `public/icons/`
-    - [ ] Sub-task: Ensure `action` (or `browser_action`) section also references the default icon
+- [x] Task: Update Manifest File
+    - [x] Sub-task: Edit `src/manifest.json` to include the `icons` object
+    - [x] Sub-task: Link the 16, 32, 48, and 128 sizes to the new files in `public/icons/`
+    - [x] Sub-task: Ensure `action` (or `browser_action`) section also references the default icon
 - [ ] Task: Conductor - User Manual Verification 'Configuration and Integration' (Protocol in workflow.md)
