@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Stack/Back Tab -->
+  <path d="M28 20 H100 A8 8 0 0 1 108 28 V100" fill="none" stroke="hsl(12, 76%, 61%)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+  
+  <!-- Main/Front Tab -->
+  <path d="M20 36 L30 20 H70 L80 36 H100 A8 8 0 0 1 108 44 V108 A8 8 0 0 1 100 116 H28 A8 8 0 0 1 20 108 Z" fill="hsl(12, 76%, 61%)" />
+  
+  <!-- "T" Monogram -->
+  <path d="M44 56 H84 V66 H69 V96 H59 V66 H44 Z" fill="white" />
+</svg>

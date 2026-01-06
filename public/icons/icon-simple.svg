@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Simplified Tab Shape -->
+  <path d="M2 3 L4 1 H12 L14 3 V14 A1 1 0 0 1 13 15 H3 A1 1 0 0 1 2 14 Z" fill="hsl(12, 76%, 61%)" />
+  
+  <!-- "T" -->
+  <path d="M5 5 H11 V7 H9 V12 H7 V7 H5 Z" fill="white" />
+</svg>
