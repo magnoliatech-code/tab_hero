@@ -57,7 +57,7 @@ export function TabList({
                   onClick={() => tab.id && onSelect(tab.id)}
                 >
                   <div className="flex items-center space-x-3 overflow-hidden flex-1 min-w-0">
-                    {tab.favIconUrl ? (
+                    {tab.favIconUrl && !tab.favIconUrl.startsWith('chrome://') ? (
                       <img src={tab.favIconUrl} alt="" className="h-4 w-4 flex-shrink-0" />
                     ) : (
                       <div className="h-4 w-4 bg-muted rounded-full flex-shrink-0" />

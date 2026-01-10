@@ -17,4 +17,7 @@
 ## Quality Assurance
 - **Linting:** ESLint
 - **Formatting:** Prettier
-- **Testing:** Vitest (unit/component testing)
+- **Testing:** Vitest (unit/component testing, including manifest and asset verification)
+
+## Build & Tooling
+- **Image Processing:** `sharp` (used for SVG to PNG conversion of extension assets)

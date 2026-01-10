@@ -110,7 +110,7 @@ describe('Tab Utilities', () => {
 
       ;(chrome.windows.getCurrent as any).mockImplementation((cb: any) => cb(currentWindow))
       
-      ;(chrome.windows.getAll as any).mockImplementation((opts: any, cb: any) => {
+      ;(chrome.windows.getAll as any).mockImplementation((_opts: any, cb: any) => {
          cb([currentWindow, otherWindow, appWindow])
       })
 
